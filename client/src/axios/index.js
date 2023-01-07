@@ -11,3 +11,5 @@ export const createPost = async (postForm) =>
   HTTP.post("/home/newNote", postForm);
 
 export const getPost = async () => HTTP.get("/home/newNote");
+
+export deletePost
