@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getPost } from "../axios";
+import { getPosts } from "../axios";
 import Cards from "../components/Cards";
 
 const HomeScreen = () => {
@@ -7,7 +7,7 @@ const HomeScreen = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await getPost();
+      const { data } = await getPosts();
       console.log(data);
       setPosts(data);
     };

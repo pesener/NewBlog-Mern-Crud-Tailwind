@@ -80,6 +80,17 @@ router.get("/newNote", async (req, res) => {
   }
 });
 
+router.get("/newNote/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const post = await Post.findById(id);
+    if (!post) return;
+    res.status(200).json(post);
+  } catch (error) {
+    res.status(404).json({ message: "post not found" });
+  }
+});
+
 router.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;
   console.log("delete", req.params);
@@ -90,6 +101,28 @@ router.delete("/delete/:id", async (req, res) => {
   } catch (err) {
     console.log("catch deleted post", err);
     return res.status(500).json({ message: err.message });
+  }
+});
+
+router.put("/update/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const { title, content, image } = req.body;
+
+    const updatedPost = await Post.findByIdAndUpdate(
+      id,
+      {
+        title,
+        content,
+        image,
+        _id: id,
+      },
+      { new: true }
+    );
+    res.status(200).json(updatedPost);
+  } catch (error) {
+    console.log(error.message);
   }
 });
 

@@ -10,6 +10,11 @@ export const login = async (formData) => HTTP.post("/home/signin", formData);
 export const createPost = async (postForm) =>
   await HTTP.post("/home/newNote", postForm);
 
-export const getPost = async () => HTTP.get("/home/newNote");
+export const getPosts = async () => HTTP.get("/home/newNote");
+
+export const getPost = async (id) => HTTP.get("/home/newNote" + id);
 
 export const deletePost = async (id) => await HTTP.delete("/home/delete/" + id);
+
+export const updatePost = async (id, updatedPost) =>
+  await HTTP.put("/home/update/" + id, updatedPost);
