@@ -2,9 +2,10 @@ import React from 'react'
 
 const SignUp = () => {
   return (
+    <div className='min-h-screen'>
     <div className='flex justify-center '>
-<div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-800 dark:border-gray-700">
-      <form class="space-y-6" action="#">
+<div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-700 dark:border-gray-800">
+      <form class="space-y-3" action="#">
      
 
         <div>
@@ -123,6 +124,7 @@ const SignUp = () => {
       </form>
     </div>
 
+    </div>
     </div>
   )
 }

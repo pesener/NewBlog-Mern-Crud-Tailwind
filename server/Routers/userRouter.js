@@ -49,17 +49,18 @@ router.post("/signup", async (req, res) => {
 
 /////////////////POSTS/////////////////////////////////////
 
-router.post("/newPost", async (req, res) => {
+router.post("/newNote", async (req, res) => {
   try {
     console.log(req.body);
-    const { title, content, date, email, name } = req.body;
+    const { title, content, createdAt, email, name, image } = req.body;
 
     const createdPost = await Post.create({
       title,
       content,
-      date,
+      createdAt,
       email,
       name,
+      image,
     });
     return res
       .status(201)
@@ -70,7 +71,7 @@ router.post("/newPost", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/newNote", async (req, res) => {
   try {
     const posts = await Post.find();
     res.status(200).json(posts);

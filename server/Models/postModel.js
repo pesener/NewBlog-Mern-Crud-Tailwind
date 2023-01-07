@@ -8,9 +8,8 @@ const postSchema = mongoose.Schema(
     content: {
       type: String,
     },
-    date: {
-      type: Date,
-      default: Date.now,
+    createdAt: {
+      type: String,
     },
     email: {
       type: String,
@@ -20,6 +19,9 @@ const postSchema = mongoose.Schema(
       default: false,
     },
     name: {
+      type: String,
+    },
+    image: {
       type: String,
     },
   },
