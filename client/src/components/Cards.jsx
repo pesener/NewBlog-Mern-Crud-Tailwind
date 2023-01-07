@@ -1,8 +1,11 @@
 import React from 'react'
 import moment from 'moment'
 import {MdModeEdit, MdDelete} from 'react-icons/md'
+import { deletePost } from '../axios'
 
 const Cards = ({post}) => {
+
+
   return (
 
 <div class="max-w-sm  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
@@ -24,7 +27,9 @@ const Cards = ({post}) => {
         </a>
 <div className='flex justify-between mt-4 mx-auto'>
         <div className='cursor-pointer mt-3 '><MdModeEdit className='fill-blue-400 h-6 w-6'/> </div>
-        <div className='cursor-pointer mt-3 '><MdDelete className='fill-red-400 h-6 w-6'/> </div>
+        <div className='cursor-pointer mt-3 '><MdDelete className='fill-red-400 h-6 w-6'  onClick={() => {
+                  deletePost(post._id);
+                }}/> </div>
         </div>
     </div>
     

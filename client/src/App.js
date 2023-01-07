@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 
 import HomeScreen from "./screens/HomeScreen";
 import CreateScreen from "./screens/CreateScreen";
+import UpdateScreen from "./screens/UpdateScreen";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
 
             <Route path="/signup" element={<SignUp />} />
             <Route path="/create" element={<CreateScreen />} />
+            <Route path="/update/:id" element={<UpdateScreen />} />
           </Routes>
         </div>
       </main>

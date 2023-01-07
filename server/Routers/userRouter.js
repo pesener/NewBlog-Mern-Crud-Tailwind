@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import Post from "../Models/postModel.js";
@@ -77,6 +77,19 @@ router.get("/newNote", async (req, res) => {
     res.status(200).json(posts);
   } catch (error) {
     res.status(404).json({ message: error.message });
+  }
+});
+
+router.delete("/delete/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log("delete", req.params);
+  try {
+    const deletedPost = await Post.findByIdAndRemove(id);
+    console.log("deletedPost", deletedPost);
+    res.status(201).json({ message: "Deleted a Note" });
+  } catch (err) {
+    console.log("catch deleted post", err);
+    return res.status(500).json({ message: err.message });
   }
 });
 

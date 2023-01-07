@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import ReactFileBase64 from 'react-file-base64'
 import { createPost } from '../axios'
-
+import {useNavigate} from 'react-router-dom'
 
 const SubmitPost = () => {
 
@@ -13,10 +13,12 @@ const[postData, setPostData] = useState({
     email:'',
     name:'',
     image:'',
-    createdAt:''
+    createdAt:'',
+    _id:""
+    
 })
 
-
+const navigate = useNavigate()
 
   return (
     <div className='min-h-screen'>
@@ -25,6 +27,7 @@ const[postData, setPostData] = useState({
         <form onSubmit={(e) => {
             e.preventDefault()
             createPost(postData)
+            navigate("/")
         }}>
         <h5 class="text-3xl mb-4 font-medium text-gray-900 dark:text-white">
           Create a post
