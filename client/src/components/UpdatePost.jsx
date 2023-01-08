@@ -4,7 +4,7 @@ import ReactFileBase64 from 'react-file-base64'
 import { updatePost, getPost } from '../axios'
 import {useNavigate} from 'react-router-dom'
 
-const UpdatePost = () => {
+const UpdatePost = ({id}) => {
 
 
 const[postData, setPostData] = useState({
@@ -18,6 +18,14 @@ const[postData, setPostData] = useState({
     
 })
 
+useEffect(()=> {
+  const getPo = async () => {
+    const{data} = await getPost(id)
+    setPostData(data)
+  }
+  getPo()
+},[id])
+
 const navigate = useNavigate()
 
   return (
@@ -26,10 +34,11 @@ const navigate = useNavigate()
         <div class="w-7/12 bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-700 dark:border-gray-800">
         <form onSubmit={(e) => {
             e.preventDefault()
-           
+            updatePost(id, postData)
+           navigate("/")
         }}>
         <h5 class="text-3xl mb-4 font-medium text-gray-900 dark:text-white">
-          Create a post
+          Update a post
         </h5>
         <label
     
