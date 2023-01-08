@@ -46,7 +46,8 @@ const navigate = useNavigate()
           >
             Title
           </label>
-          <input name='title' type='text' onChange={(e) => setPostData({...postData, title: e.target.value})}
+          <input name='title' type='text' onChange={(e) => setPostData({...postData, title: e.target.value})} 
+            value={postData.title}
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
             rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
             p-2.5 dark:bg-gray-600 dark:border-gray-500
@@ -63,6 +64,7 @@ const navigate = useNavigate()
             Content
           </label>
           <textarea name='content' type='text' as='textarea' rows='5' onChange={(e) => setPostData({...postData, content: e.target.value})}
+            value={postData.content}
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
             rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
             p-2.5 dark:bg-gray-600 dark:border-gray-500

@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { getPosts } from "../axios";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPosts } from "../actions/postActions";
+
 import Cards from "../components/Cards";
 
 const HomeScreen = () => {
-  const [posts, setPosts] = useState([]);
+  const dispatch = useDispatch();
+
+  const posts = useSelector((state) => state.posts);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const { data } = await getPosts();
-      console.log(data);
-      setPosts(data);
-    };
-    fetchPosts();
-  }, []);
+    dispatch(getPosts());
+  }, [dispatch]);
+
   return (
     <div className="min-h-screen">
       {!posts.length ? (
