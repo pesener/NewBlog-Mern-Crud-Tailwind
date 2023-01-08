@@ -1,11 +1,13 @@
 import React from 'react'
 import moment from 'moment'
 import {MdModeEdit, MdDelete} from 'react-icons/md'
-import { deletePost } from '../axios'
+import { deletePost } from '../actions/postActions'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Cards = ({post}) => {
 
+  const dispatch = useDispatch()
 
   return (
 
@@ -34,7 +36,7 @@ const Cards = ({post}) => {
 
 
         <div className='cursor-pointer mt-3 '><MdDelete  className='fill-red-400 h-6 w-6'  onClick={() => {
-                  deletePost(post._id);
+                  dispatch(deletePost(post._id));
                 }}/> </div>
         </div>
     </div>

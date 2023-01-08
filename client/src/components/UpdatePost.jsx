@@ -1,12 +1,15 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import ReactFileBase64 from 'react-file-base64'
-import { updatePost, getPost } from '../axios'
+import {  getPost } from '../axios'
+import { updatePost } from '../actions/postActions'
+import { useDispatch } from 'react-redux'
 import {useNavigate} from 'react-router-dom'
+
 
 const UpdatePost = ({id}) => {
 
-
+const dispatch = useDispatch()
 const[postData, setPostData] = useState({
     title:'',
     content:'',
@@ -34,7 +37,7 @@ const navigate = useNavigate()
         <div class="w-7/12 bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-700 dark:border-gray-800">
         <form onSubmit={(e) => {
             e.preventDefault()
-            updatePost(id, postData)
+            dispatch(updatePost(id,postData))
            navigate("/")
         }}>
         <h5 class="text-3xl mb-4 font-medium text-gray-900 dark:text-white">

@@ -1,8 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import ReactFileBase64 from 'react-file-base64'
-import { createPost } from '../axios'
+
 import {useNavigate} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { createPost } from '../actions/postActions'
+
 
 const SubmitPost = () => {
 
@@ -19,6 +22,7 @@ const[postData, setPostData] = useState({
 })
 
 const navigate = useNavigate()
+const dispatch = useDispatch()
 
   return (
     <div className='min-h-screen'>
@@ -26,7 +30,7 @@ const navigate = useNavigate()
         <div class="w-7/12 bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-700 dark:border-gray-800">
         <form onSubmit={(e) => {
             e.preventDefault()
-            createPost(postData)
+            dispatch(createPost(postData))
             navigate("/")
         }}>
         <h5 class="text-3xl mb-4 font-medium text-gray-900 dark:text-white">
