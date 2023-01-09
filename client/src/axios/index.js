@@ -4,8 +4,12 @@ import React from "react";
 const HTTP = axios.create({
   baseURL: "http://localhost:5000",
 });
-
+///USER///
 export const login = async (formData) => HTTP.post("/home/signin", formData);
+
+export const register = async (formData) => HTTP.post("/home/signup", formData);
+
+///POST///
 
 export const createPost = async (postForm) =>
   await HTTP.post("/home/newNote", postForm);
