@@ -12,7 +12,7 @@ const SignUp = () => {
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
-    countries: countrySelect,
+    countries: countrySelect.label,
     email: "",
     password: "",
     correctionPassword: "",
@@ -39,7 +39,7 @@ const SignUp = () => {
   };
 
   useEffect(() => {
-    setFormData({ ...formData, countries: countrySelect });
+    setFormData({ ...formData, countries: countrySelect.label });
   }, [countrySelect]);
 
 
@@ -53,6 +53,7 @@ const SignUp = () => {
 
           register(formData)
             .then((res) => {
+              toast.success(res.data.message);
               navigate("/signin");
             })
             .catch((err) => {
@@ -155,7 +156,11 @@ const SignUp = () => {
           >
             Password Again
           </label>
-          <input type="password" name="password" id="password" placeholder="••••••••"
+          <input
+            onChange={(e) =>
+              setFormData({ ...formData, correctionPassword: e.target.value })
+            }
+            type="password" name="password" id="password" placeholder="••••••••"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm
             rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
             p-2.5 dark:bg-gray-600 dark:border-gray-500

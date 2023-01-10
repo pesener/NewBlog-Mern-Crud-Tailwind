@@ -17,7 +17,7 @@ router.post("/signin", async (req, res) => {
     if (!isPasswordCorrect)
       return res.status(400).json({ message: "Wrong password." });
 
-    return res.status(200).json({ user, message: "Successfull" });
+    return res.status(200).json({ user, message: "Successfully signed in" });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -40,7 +40,9 @@ router.post("/signup", async (req, res) => {
       email,
       password: hashedPassword,
     });
-    return res.status(201).json(createdUser);
+    return res
+      .status(201)
+      .json({ message: "Create post successfull", err: "ok" });
   } catch (error) {
     console.log(error);
     return res.json({ message: "create user failed" });
