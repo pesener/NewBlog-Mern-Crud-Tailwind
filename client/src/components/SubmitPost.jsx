@@ -27,7 +27,7 @@ const dispatch = useDispatch()
   return (
     <div className='min-h-screen'>
     <div className='flex justify-center '>
-        <div class="w-7/12 bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-700 dark:border-gray-800">
+        <div class="w-7/12 bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-800 dark:border-gray-700">
         <form onSubmit={(e) => {
             e.preventDefault()
             dispatch(createPost(postData))

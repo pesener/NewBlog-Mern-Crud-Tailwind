@@ -46,7 +46,7 @@ const SignUp = () => {
   return (
     <div className='min-h-screen'>
     <div className='flex justify-center '>
-<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-700 dark:border-gray-800">
+<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-800 dark:border-gray-700">
       <form className="space-y-3" action="#"
          onSubmit={(e) => {
           e.preventDefault();
@@ -61,7 +61,9 @@ const SignUp = () => {
             });
         }}
       >
-     
+      <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+          Sign in to our platform
+        </h5>
 
         <div>
           <label
@@ -189,7 +191,7 @@ const SignUp = () => {
         </button>
         
       </form>
-      <div
+      <div                                        
             style={{
               display: "flex",
               flexDirection: "column",
@@ -207,7 +209,7 @@ const SignUp = () => {
             </p>
         
         
-            <p
+            <p className='font-medium list-disc'
               style={{
                 color: "red",
                 display:
