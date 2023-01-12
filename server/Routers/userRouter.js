@@ -2,6 +2,8 @@ import express, { response } from "express";
 import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import Post from "../Models/postModel.js";
+import jwt from "jsonwebtoken";
+import tokenModel from "../Models/tokenModel.js";
 
 const router = express.Router();
 
@@ -40,9 +42,33 @@ router.post("/signup", async (req, res) => {
       email,
       password: hashedPassword,
     });
+
+    const accessToken = jwt.sign(
+      {
+        email: createdUser.email,
+        id: createdUser._id,
+      },
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: "3m" }
+    );
+
+    const refreshToken = jwt.sign(
+      {
+        email: createdUser.email,
+        id: createdUser._id,
+      },
+      process.env.REFRESH_TOKEN_SECRET
+    );
+    await tokenModel.create({
+      userId: createdUser._id,
+      refreshToken: refreshToken,
+    });
     return res
       .status(201)
-      .json({ message: "Create post successfull", err: "ok" });
+      .json(
+        { message: "Create post successfull", err: "ok" },
+        { createdUser, accessToken }
+      );
   } catch (error) {
     console.log(error);
     return res.json({ message: "create user failed" });
