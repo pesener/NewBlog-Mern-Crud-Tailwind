@@ -66,7 +66,7 @@ router.post("/signup", async (req, res) => {
     return res
       .status(201)
       .json(
-        { message: "Create post successfull", err: "ok" },
+        { message: "Create user successfull", err: "ok" },
         { createdUser, accessToken }
       );
   } catch (error) {
