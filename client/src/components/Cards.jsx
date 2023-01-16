@@ -11,15 +11,15 @@ const Cards = ({post}) => {
 
   return (
 
-<div className="max-w-sm  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+<div className="max-w-md  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
     
-        <img className="rounded-t-lg" src={post.image} alt="" />
+        <img className="object-fill h-48 w-96 hover:opacity-90" src={post.image} alt="" />
     
-    <div className="p-5">
+    <div className="p-3 x-2">
        
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.title}</h5>
+            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{post.title}</h5>
        
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.content}</p>
+        <p className="mb-3 font-normal text-gray-400 dark:text-gray-200 truncate">{post.content}</p>
         
             
             <p className="text-gray-600 dark:text-gray-400 font-normal mb-3">{moment(post.createdAt).fromNow()}</p>

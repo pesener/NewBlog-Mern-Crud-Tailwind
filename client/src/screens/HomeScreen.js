@@ -36,10 +36,10 @@ const HomeScreen = () => {
           <span className="sr-only">Loading...</span>
         </div>
       ) : (
-        <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  m-auto ">
+        <div className=" grid grid-cols-1  m-auto ">
           {posts.map((post) => (
             <div
-              className=" md:w-64 lg:w-72 sm:w-48 w-48  m-auto mb-4  "
+              className=" md:w-72 lg:w-96 sm:w-48 w-48  m-auto mb-4  "
               key={post._id}
             >
               <Cards post={post} />
