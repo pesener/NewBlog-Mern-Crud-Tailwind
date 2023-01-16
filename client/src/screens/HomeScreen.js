@@ -14,7 +14,16 @@ const HomeScreen = () => {
   }, [dispatch]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
+      <h1 className="items-center mb-8 mt-8 flex justify-center text-6xl font-serif text-indigo-800 font-bold">
+        Welcome to NewBlog
+      </h1>
+
+      <h3 className="items-center mb-20 mt-8 font-medium flex justify-center text-2xl font-serif ">
+        The NewBlog covers topics at the cross section of &#160;
+        <strong>design</strong>,&#160;<strong>art</strong>&#160;and&#160;
+        <strong>technology</strong>.
+      </h3>
       {!posts.length ? (
         <div className="items-center flex justify-center mb-8" role="status">
           <svg

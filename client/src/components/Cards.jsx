@@ -13,9 +13,9 @@ const Cards = ({post}) => {
 
 <div className="max-w-md  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
     
-        <img className="object-fill h-48 w-96 hover:opacity-90" src={post.image} alt="" />
+        <img className=" hover:opacity-90 rounded-t-lg h-52 w-96 " src={post.image} alt="" />
     
-    <div className="p-3 x-2">
+    <div className="p-5 ">
        
             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{post.title}</h5>
        
