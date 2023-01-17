@@ -2,13 +2,13 @@ import React from "react";
 
 import { RiAdminLine } from "react-icons/ri";
 import { RiLogoutCircleLine } from "react-icons/ri";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ user, setUser }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [user, setUser] = useState();
+
 
   useEffect(() => {
     if (localStorage.getItem("user") && !user) {

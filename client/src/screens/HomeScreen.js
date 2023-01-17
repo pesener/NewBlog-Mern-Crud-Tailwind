@@ -4,7 +4,7 @@ import { getPosts } from "../actions/postActions";
 
 import Cards from "../components/Cards";
 
-const HomeScreen = () => {
+const HomeScreen = ({ user } ) => {
   const dispatch = useDispatch();
 
   const posts = useSelector((state) => state.posts);
@@ -51,7 +51,7 @@ const HomeScreen = () => {
               className=" md:w-72 lg:w-96 sm:w-48 w-48  m-auto mb-4  "
               key={post._id}
             >
-              <Cards post={post} />
+              <Cards user={ user } post={post} />
             </div>
           ))}
         </div>
