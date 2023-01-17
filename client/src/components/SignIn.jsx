@@ -71,39 +71,15 @@ const SignIn = () => {
             
           </input>
         </div>
-        <div className="flex items-start">
-          <div className="flex items-start">
-            <div className="flex items-center h-5">
-              <input  id="remember" type="checkbox" value="" className="w-4 h-4 border
-                border-gray-300 rounded bg-gray-50 focus:ring-3
-                focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600
-                dark:focus:ring-blue-600 dark:ring-offset-gray-800" required>
-                
-               
-              </input>
-            </div>
-            <label
-              htmlFor="remember"
-              className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              Remember me
-            </label>
-          </div>
-         
-        </div>
+      
         <button
           disabled={formData.email === "" || formData.password === ""} 
           type="submit"
           className="disabled:opacity-60 disabled:cursor-not-allowed w-full text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-700 dark:hover:bg-red-800 dark:focus:ring-red-900"
         >
-          Sign in to your account
+          Sign in to admin panel
         </button>
-        <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-          Not registered?{" "}
-          <a href="/signup" className="text-red-700 hover:underline dark:text-red-500">
-            Create account
-          </a>
-        </div>
+        
       </form>
     </div>
    </div>

@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
+
 import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 import HomeScreen from "./screens/HomeScreen";
@@ -18,9 +18,8 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<HomeScreen />} exact />
-            <Route path="/signin" element={<SignIn />} />
 
-            <Route path="/signup" element={<SignUp />} />
+            <Route path="/admin" element={<SignIn />} />
             <Route path="/create" element={<CreateScreen />} />
             <Route path="/update/:id" element={<UpdateScreen />} />
           </Routes>
