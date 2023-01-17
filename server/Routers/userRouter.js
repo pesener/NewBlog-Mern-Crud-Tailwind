@@ -8,7 +8,7 @@ import tokenModel from "../Models/tokenModel.js";
 const router = express.Router();
 
 //////////////////USERS/////////////////////////////////////
-router.post("/signin", async (req, res) => {
+router.post("/admin", async (req, res) => {
   try {
     console.log(req.body);
     const { email, password } = req.body;

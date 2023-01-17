@@ -5,7 +5,7 @@ import { deletePost } from "../actions/postActions";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-const Cards = ({ post },{ user } ) => {
+const Cards = ({ post , user } ) => {
   const dispatch = useDispatch();
 
   return (
