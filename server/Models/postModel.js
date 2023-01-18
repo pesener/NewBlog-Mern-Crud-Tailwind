@@ -17,10 +17,6 @@ const postSchema = mongoose.Schema(
     email: {
       type: String,
     },
-    isPublish: {
-      type: Boolean,
-      default: false,
-    },
     name: {
       type: String,
     },

@@ -1,6 +1,7 @@
 import {
   CREATE,
   FETCH_ALL,
+  FETCH,
   UPDATE,
   DELETE,
 } from "../constants/actionConstants";
@@ -8,6 +9,8 @@ import {
 export default (posts = [], action) => {
   switch (action.type) {
     case FETCH_ALL:
+      return action.payload;
+    case FETCH:
       return action.payload;
 
     case CREATE:

@@ -4,13 +4,15 @@ import { getPosts } from "../actions/postActions";
 
 import Cards from "../components/Cards";
 
-const HomeScreen = ({ user } ) => {
+const HomeScreen = ({ user }) => {
   const dispatch = useDispatch();
 
   const posts = useSelector((state) => state.posts);
 
   useEffect(() => {
-    dispatch(getPosts());
+    if (!posts[0]) {
+      dispatch(getPosts());
+    }
   }, [dispatch]);
 
   return (
@@ -28,7 +30,7 @@ const HomeScreen = ({ user } ) => {
         <div className="items-center flex justify-center mb-8" role="status">
           <svg
             aria-hidden="true"
-            className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            className="w-10 h-10 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-500"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +53,7 @@ const HomeScreen = ({ user } ) => {
               className=" md:w-72 lg:w-96 sm:w-48 w-48  m-auto mb-4  "
               key={post._id}
             >
-              <Cards user={ user } post={post} />
+              <Cards user={user} post={post} />
             </div>
           ))}
         </div>

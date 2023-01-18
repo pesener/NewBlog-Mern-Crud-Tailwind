@@ -80,11 +80,13 @@ router.post("/signup", async (req, res) => {
 router.post("/newNote", async (req, res) => {
   try {
     console.log(req.body);
-    const { title, content, createdAt, email, name, image } = req.body;
+    const { title, content, content2, createdAt, email, name, image } =
+      req.body;
 
     const createdPost = await Post.create({
       title,
       content,
+      content2,
       createdAt,
       email,
       name,

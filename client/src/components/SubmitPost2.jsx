@@ -24,7 +24,7 @@ const SubmitPost2 = () => {
   return (
     <div className="min-h-screen">
       <div className="flex justify-center ">
-        <div class="w-7/12 bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-7/12 bg-white border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-gray-800 dark:border-gray-700">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -32,20 +32,20 @@ const SubmitPost2 = () => {
               navigate("/");
             }}
           >
-            <h5 class="text-3xl mb-4 font-medium text-gray-900 dark:text-white">
+            <h5 className="text-3xl mb-4 font-medium text-gray-900 dark:text-white">
               Create a post
             </h5>
-            <label class="block mb-2 text-xl font-medium text-gray-900 dark:text-white">
+            <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-white">
               Title
             </label>
             <input
-              maxlength="100"
+              maxLßength="100"
               name="title"
               type="text"
               onChange={(e) =>
                 setPostData({ ...postData, title: e.target.value })
               }
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm
             rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
             p-2.5 dark:bg-gray-600 dark:border-gray-500
             dark:placeholder-gray-400 dark:text-white mb-5"
@@ -53,7 +53,7 @@ const SubmitPost2 = () => {
               placeholder="Title"
             ></input>
 
-            <label class="block mb-2 text-xl font-medium text-gray-900 dark:text-white text-ellipsis overflow-hidden ...">
+            <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-white text-ellipsis overflow-hidden ...">
               Content
             </label>
             <textarea
@@ -64,14 +64,14 @@ const SubmitPost2 = () => {
               onChange={(e) =>
                 setPostData({ ...postData, content: e.target.value })
               }
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm
             rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
             p-2.5 dark:bg-gray-600 dark:border-gray-500
             dark:placeholder-gray-400 dark:text-white mb-5 text-ellipsis overflow-hidden ..."
               required
               placeholder="Write your thoughts here..."
             ></textarea>
-            <label class="block mb-2 text-xl font-medium text-gray-900 dark:text-white text-ellipsis overflow-hidden ...">
+            <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-white text-ellipsis overflow-hidden ...">
               Content 2
             </label>
             <textarea
@@ -82,11 +82,10 @@ const SubmitPost2 = () => {
               onChange={(e) =>
                 setPostData({ ...postData, content2: e.target.value })
               }
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm
             rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
             p-2.5 dark:bg-gray-600 dark:border-gray-500
             dark:placeholder-gray-400 dark:text-white mb-5 text-ellipsis overflow-hidden ..."
-              required
               placeholder="Write your thoughts here..."
             ></textarea>
             <div className="mb-4">
