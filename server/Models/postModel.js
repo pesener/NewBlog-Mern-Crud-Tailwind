@@ -8,6 +8,9 @@ const postSchema = mongoose.Schema(
     content: {
       type: String,
     },
+    content2: {
+      type: String,
+    },
     createdAt: {
       type: String,
     },
