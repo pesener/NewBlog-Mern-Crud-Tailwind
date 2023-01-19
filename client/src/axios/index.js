@@ -16,9 +16,13 @@ export const createPost = async (postForm) =>
 
 export const getPosts = async () => await HTTP.get("/home/newNote");
 
-export const getPost = async (id) => await HTTP.get("/home/newNote" + id);
+export const getPost = async (id) => await HTTP.get("/home/newNote/" + id);
 
 export const deletePost = async (id) => await HTTP.delete("/home/delete/" + id);
 
 export const updatePost = async (id, updatedPost) =>
   await HTTP.put("/home/update/" + id, updatedPost);
+
+///COMMENT////
+export const createComment = async (commentForm) =>
+  await HTTP.post("/home/newNote/comment", commentForm);

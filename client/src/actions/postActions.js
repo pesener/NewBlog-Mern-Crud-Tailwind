@@ -1,7 +1,6 @@
 import {
   CREATE,
   FETCH_ALL,
-  FETCH,
   UPDATE,
   DELETE,
 } from "../constants/actionConstants";
@@ -12,16 +11,6 @@ export const getPosts = () => async (dispatch) => {
     const { data } = await api.getPosts();
 
     dispatch({ type: FETCH_ALL, payload: data });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export const getPost = (id) => async (dispatch) => {
-  try {
-    const { data } = await api.getPost(id);
-
-    dispatch({ type: FETCH, payload: data });
   } catch (error) {
     console.log(error);
   }

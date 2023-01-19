@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import Post from "../Models/postModel.js";
 import jwt from "jsonwebtoken";
 import tokenModel from "../Models/tokenModel.js";
+import Comment from "../models/commentModel.js";
 
 const router = express.Router();
 
@@ -111,13 +112,17 @@ router.get("/newNote", async (req, res) => {
 });
 
 router.get("/newNote/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log("get", req.params);
   try {
-    const { id } = req.params;
     const post = await Post.findById(id);
+
     if (!post) return;
     res.status(200).json(post);
+    console.log("getPost", post);
   } catch (error) {
     res.status(404).json({ message: "post not found" });
+    console.log("Post not ok", error);
   }
 });
 
@@ -153,6 +158,27 @@ router.put("/update/:id", async (req, res) => {
     res.status(200).json(updatedPost);
   } catch (error) {
     console.log(error.message);
+  }
+});
+
+////COMMENT/////
+
+router.post("/newNote/comment", async (req, res) => {
+  try {
+    console.log(req.body);
+    const { name, comment, email } = req.body;
+
+    const createdComment = await Comment.create({
+      comment,
+      email,
+      name,
+    });
+    return res
+      .status(201)
+      .json({ message: "Create comment successfull", err: "ok" });
+  } catch (error) {
+    console.log(error);
+    return res.json({ message: "Create coomment failed", err: "notok" });
   }
 });
 

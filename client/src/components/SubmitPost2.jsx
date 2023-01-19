@@ -39,7 +39,7 @@ const SubmitPost2 = () => {
               Title
             </label>
             <input
-              maxLßength="100"
+              maxLength="100"
               name="title"
               type="text"
               onChange={(e) =>
