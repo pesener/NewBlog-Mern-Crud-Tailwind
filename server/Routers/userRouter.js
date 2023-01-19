@@ -163,7 +163,7 @@ router.put("/update/:id", async (req, res) => {
 
 ////COMMENT/////
 
-router.post("/newNote/comment", async (req, res) => {
+router.post("/comment", async (req, res) => {
   try {
     console.log(req.body);
     const { name, comment, email } = req.body;
@@ -178,7 +178,31 @@ router.post("/newNote/comment", async (req, res) => {
       .json({ message: "Create comment successfull", err: "ok" });
   } catch (error) {
     console.log(error);
-    return res.json({ message: "Create coomment failed", err: "notok" });
+    return res.json({ message: "Create comment failed", err: "notok" });
+  }
+});
+
+router.delete("/delete/comment/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log("delete", req.params);
+  try {
+    const deletedComment = await Comment.findByIdAndRemove(id);
+    console.log("deletedComment", deletedComment);
+    res.status(201).json({ message: "Deleted a Comment" });
+  } catch (err) {
+    console.log("catch deleted comment", err);
+    return res.status(500).json({ message: err.message });
+  }
+});
+
+router.get("/comment", async (req, res) => {
+  try {
+    const comments = await Comment.find();
+    res.status(200).json(comments);
+    console.log("getComments", comments);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+    console.log("Comment not ok", error);
   }
 });
 

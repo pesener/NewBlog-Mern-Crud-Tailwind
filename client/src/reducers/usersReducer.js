@@ -10,3 +10,4 @@ const usersReducer = (state = { userData: null }, action) => {
       return { error: action.payload };
   }
 };
+export default usersReducer;

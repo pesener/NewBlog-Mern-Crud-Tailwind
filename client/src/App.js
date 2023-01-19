@@ -24,12 +24,13 @@ function App() {
             <Route path="/newNote/:id" element={<ReadMoreScreen />} />
 
             <Route element={<PrivateRoutes user={user} />}>
-              <Route path="/create" element={<CreateScreen />} />
+              <Route path="/create" element={<CreateScreen user={user} />} />
               <Route path="/update/:id" element={<UpdateScreen />} />
             </Route>
           </Routes>
         </div>
       </main>
+
       <Footer />
       <Toaster
         position="top-center"

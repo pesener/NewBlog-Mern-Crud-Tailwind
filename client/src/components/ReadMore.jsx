@@ -19,6 +19,8 @@ const ReadMore = ({ id }) => {
     name: "",
     comment: "",
     email: "",
+    createdAt: "",
+    _id: "",
     isPublish: false,
   });
   useEffect(() => {

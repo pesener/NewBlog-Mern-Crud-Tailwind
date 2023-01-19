@@ -8,9 +8,8 @@ const commentSchema = mongoose.Schema(
     comment: {
       type: String,
     },
-    date: {
-      type: Date,
-      default: Date.now,
+    createdAt: {
+      type: String,
     },
     email: {
       type: String,

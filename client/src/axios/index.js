@@ -25,4 +25,9 @@ export const updatePost = async (id, updatedPost) =>
 
 ///COMMENT////
 export const createComment = async (commentForm) =>
-  await HTTP.post("/home/newNote/comment", commentForm);
+  await HTTP.post("/home/comment", commentForm);
+
+export const getComments = async () => await HTTP.get("/home/comment");
+
+export const deleteComments = async (id) =>
+  await HTTP.delete("/home/delete/comment/" + id);
