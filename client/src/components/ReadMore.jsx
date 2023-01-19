@@ -54,6 +54,7 @@ const ReadMore = ({ id }) => {
                   .catch((err) => {
                     toast.error(err.response.data.message);
                   });
+                e.target.reset();
               }}
             >
               <h5 className="text-3xl mb-4 font-medium text-gray-900 dark:text-white">
@@ -117,6 +118,19 @@ const ReadMore = ({ id }) => {
                 required
                 placeholder="Write your thoughts here..."
               ></textarea>
+              <div className="flex flex-col items-center">
+                <button
+                  disabled={
+                    commentData.name === "" ||
+                    commentData.comment === "" ||
+                    commentData.email === ""
+                  }
+                  type="submit"
+                  className="disabled:opacity-60  disabled:cursor-not-allowed bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-60 border border-blue-700 rounded "
+                >
+                  Send
+                </button>
+              </div>
             </form>
           </div>
         </div>
