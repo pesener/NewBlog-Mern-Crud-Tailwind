@@ -206,4 +206,47 @@ router.get("/comment", async (req, res) => {
   }
 });
 
+router.put("/put/published", async (req, res) => {
+  try {
+    const { id, isPublish } = req.body;
+    await Comment.findOneAndUpdate(
+      { _id: id },
+
+      {
+        isPublish: isPublish,
+      }
+    );
+    if (!isPublish) res.json({ message: "Unpublished a Comment" });
+    else res.json({ message: "Published a Comment" });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: "Comment cannot be Published" });
+  }
+});
+
+router.get("/comment/pub", async (req, res) => {
+  try {
+    const comments = await Comment.find({ isPublish: true });
+    res.json(comments);
+    console.log("Not Failed", comments);
+  } catch (err) {
+    return res.status(400).json("error:" + err);
+  }
+});
+
+router.get("/comment/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log("get", req.params);
+  try {
+    const comment = await Comment.findById({ id, isPublish: true });
+
+    if (!comment) return;
+    res.status(200).json(comment);
+    console.log("getComment", comment);
+  } catch (error) {
+    res.status(404).json({ message: "comment not found" });
+    console.log("Comment not ok", error);
+  }
+});
+
 export default router;

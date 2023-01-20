@@ -1,4 +1,9 @@
-import { CREATECO, FETCH_ALL_CO, DELETECO } from "../constants/actionConstants";
+import {
+  CREATECO,
+  FETCH_ALL_CO,
+  DELETECO,
+  UPDATECO,
+} from "../constants/actionConstants";
 import * as api from "../axios/index";
 
 export const getComments = () => async (dispatch) => {
@@ -26,6 +31,15 @@ export const deleteComments = (id) => async (dispatch) => {
     await api.deleteComments(id);
 
     dispatch({ type: DELETECO, payload: id });
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const updateComments = (id, commentData) => async (dispatch) => {
+  try {
+    const { data } = await api.updatePost(id, commentData);
+
+    dispatch({ type: UPDATECO, payload: data });
   } catch (error) {
     console.log(error);
   }

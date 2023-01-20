@@ -31,3 +31,10 @@ export const getComments = async () => await HTTP.get("/home/comment");
 
 export const deleteComments = async (id) =>
   await HTTP.delete("/home/delete/comment/" + id);
+
+export const updatePub = async (publishedObj) =>
+  HTTP.put("/home/put/published", publishedObj);
+
+export const getPubPost = async () => HTTP.get("/home/comment/pub");
+
+export const getComment = async (id) => await HTTP.get("/home/comment/" + id);

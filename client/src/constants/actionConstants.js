@@ -8,6 +8,8 @@ export const FETCH_ALL_CO = "FETCH_ALL_CO";
 
 export const UPDATE = "UPDATE";
 
+export const UPDATECO = "UPDATECO";
+
 export const DELETE = "DELETE";
 
 export const DELETECO = "DELETECO";

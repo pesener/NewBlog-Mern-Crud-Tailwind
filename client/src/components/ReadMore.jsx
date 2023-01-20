@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import PublishedComments from "../components/PublishedComments";
 
 import { getPost, createComment } from "../axios/index";
 import { toast } from "react-hot-toast";
@@ -23,6 +24,7 @@ const ReadMore = ({ id }) => {
     _id: "",
     isPublish: false,
   });
+
   useEffect(() => {
     getPost(id)
       .then((res) => {
@@ -42,6 +44,9 @@ const ReadMore = ({ id }) => {
         <p className="mb-3 font-normal text-2xl text-gray-400 dark:text-gray-900 truncate ">
           {postData.content}
         </p>
+      </div>
+      <div className="mb-4 mt-4 ">
+        <PublishedComments />
       </div>
       <div className="min-h-screen">
         <div className="flex justify-center ">
