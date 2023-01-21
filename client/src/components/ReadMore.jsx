@@ -23,6 +23,7 @@ const ReadMore = ({ id }) => {
     createdAt: "",
     _id: "",
     isPublish: false,
+    lid: "",
   });
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const ReadMore = ({ id }) => {
         </p>
       </div>
       <div className="mb-4 mt-4 ">
-        <PublishedComments />
+        <PublishedComments postData={postData} id={id} />
       </div>
       <div className="min-h-screen">
         <div className="flex justify-center ">
@@ -54,6 +55,7 @@ const ReadMore = ({ id }) => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+
                 createComment(commentData)
                   .then((res) => {
                     toast.success(res.data.message);
@@ -85,7 +87,11 @@ const ReadMore = ({ id }) => {
                   placeholder="name@company.com"
                   required
                   onChange={(e) =>
-                    setCommentData({ ...commentData, email: e.target.value })
+                    setCommentData({
+                      ...commentData,
+                      email: e.target.value,
+                      lid: postData._id,
+                    })
                   }
                 ></input>
               </div>

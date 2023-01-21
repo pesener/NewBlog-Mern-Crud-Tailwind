@@ -18,6 +18,9 @@ const commentSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    lid: {
+      type: String,
+    },
   },
   {
     timestamps: true,
