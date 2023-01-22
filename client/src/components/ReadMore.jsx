@@ -42,12 +42,12 @@ const ReadMore = ({ id }) => {
         <h1 className="mb-2 text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-900">
           {postData.title}
         </h1>
-        <p className="mb-3 font-normal text-2xl text-gray-400 dark:text-gray-900 truncate ">
+        <p className="mb-3 font-normal text-2xl text-gray-400 dark:text-gray-900  ">
           {postData.content}
         </p>
       </div>
       <div className="mb-4 mt-4 ">
-        <PublishedComments postData={postData} id={id} />
+        <PublishedComments id={id} />
       </div>
       <div className="min-h-screen">
         <div className="flex justify-center ">
@@ -110,7 +110,7 @@ const ReadMore = ({ id }) => {
             p-2.5 dark:bg-gray-600 dark:border-gray-500
             dark:placeholder-gray-400 dark:text-white mb-5"
                 required
-                placeholder="Title"
+                placeholder="Name"
               ></input>
 
               <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-white text-ellipsis overflow-hidden ...">

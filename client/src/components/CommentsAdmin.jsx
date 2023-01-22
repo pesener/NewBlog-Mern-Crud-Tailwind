@@ -23,10 +23,6 @@ const CommentsAdmin = ({ user, com }) => {
   return (
     <div className="max-w-md opacity-90 m-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
       <div className="p-5 ">
-        <p className="mb-3 font-normal text-gray-400 dark:text-gray-200 truncate ">
-          {com.comment}
-        </p>
-
         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
           {com.name}
         </h5>
