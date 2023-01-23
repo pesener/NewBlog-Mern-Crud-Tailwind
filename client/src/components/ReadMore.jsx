@@ -39,11 +39,14 @@ const ReadMore = ({ id }) => {
   return (
     <div>
       <div className="p-5 grid-col-1 text-center" key={postData._id}>
-        <h1 className="mb-2 text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-900">
+        <h1 className="font-serif text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-900 mb-20 mt-20">
           {postData.title}
         </h1>
-        <p className="mb-3 font-normal text-2xl text-gray-400 dark:text-gray-900  ">
+        <p className="mb-3 indent-8  font-normal leading-relaxed font-serif text-3xl text-gray-400 dark:text-gray-900 mr-40 ml-40">
           {postData.content}
+        </p>
+        <p className="mb-3 indent-8 break-keep font-normal leading-relaxed font-serif text-2xl text-gray-400 dark:text-gray-900 mr-40 ml-40 mt-20">
+          {postData.content2}
         </p>
       </div>
       <div className="mb-4 mt-4 ">

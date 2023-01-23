@@ -35,12 +35,15 @@ const PublishedComments = ({ id }) => {
 
       {isPubComment.map((com) =>
         com.lid === id ? (
-          <div className="mb-4 mt-4" key={com._id}>
+          <div
+            className="mb-4 mt-4 border-separate border-spacing-2 border border-slate-600  "
+            key={com._id}
+          >
             <div className="p-5 grid-col-1 text-center">
-              <h1 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-900">
+              <h1 className="mb-2 italic text-2xl font-bold font-serif tracking-tight text-gray-900 dark:text-gray-900">
                 {com.name}
               </h1>
-              <p className="mb-3 font-normal text-2xl text-gray-400 dark:text-gray-900 truncate ">
+              <p className="mb-3 font-normal font-serif text-xl text-gray-400 dark:text-gray-900 truncate ">
                 {com.comment}
               </p>
             </div>
