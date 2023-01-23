@@ -9,19 +9,27 @@ const Cards = ({ post, user }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="max-w-md opacity-100 drop-shadow-2xl  mb-20 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-gray-500/40 hover:shadow-gray-500/50 dark:bg-gray-800 dark:border-gray-700  ">
-      <img
-        className=" hover:opacity-90 rounded-t-lg h-52 w-128 "
-        src={post.image}
-        alt=""
-      />
+    <div
+      key={post._id}
+      className="max-w-sm opacity-100 drop-shadow-2xl   mb-20 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-gray-500/40 hover:shadow-gray-500/50 dark:bg-gray-800 dark:border-gray-700  "
+    >
+      <div>
+        <img
+          className=" hover:opacity-90 rounded-t-lg h-auto w-full "
+          src={post.image}
+          alt=""
+        />
+      </div>
 
-      <div className="p-5  ">
-        <h5 className="mb-2 text-2xl font-bold font-serif tracking-tight text-gray-900 dark:text-white">
+      <div className="p-5  " key={post._id}>
+        <h5 className="mb-5 text-2xl font-bold font-serif tracking-tight text-gray-900 dark:text-white">
           {post.title}
         </h5>
 
-        <p className="mb-3 break-all font-normal text-lg font-serif  text-gray-400 dark:text-gray-200 truncate ">
+        <p
+          key={post._id}
+          className="mb-3 break-words line-clamp-3 font-normal text-lg font-serif  text-gray-400 dark:text-gray-200  "
+        >
           {post.content}
         </p>
 
@@ -31,9 +39,9 @@ const Cards = ({ post, user }) => {
 
         <Link
           to={`/newNote/${post._id}`}
-          className="inline-flex font-serif items-center px-3 py-2 text-md font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex font-serif items-center px-3 py-2 text-md font-medium text-center text-white bg-readmore-color rounded-lg hover:bg-readmore-color-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-readmore-color dark:hover:bg-hov-readmore dark:focus:ring-blue-800"
         >
-          Read more <MdReadMore className="fill-blue-200 ml-3 h-6 w-6" />
+          Read more <MdReadMore className="readmore-color ml-3 h-6 w-6" />
           <svg
             aria-hidden="true"
             className="w-2 h-4 ml-2 -mr-1"

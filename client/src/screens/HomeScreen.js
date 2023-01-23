@@ -10,22 +10,22 @@ const HomeScreen = ({ user }) => {
   const posts = useSelector((state) => state.posts);
 
   useEffect(() => {
-    if (!posts[0]) {
-      dispatch(getPosts());
-    }
+    dispatch(getPosts());
   }, [dispatch]);
 
   return (
-    <div className="min-h-screen ">
-      <h1 className="items-center mb-20 mt-20 flex justify-center text-7xl font-serif text-indigo-800 font-bold">
+    <div className="min-h-screen  ">
+      <h1 className="items-center mb-20 mt-20 flex justify-center text-3xl md:text-5xl lg:text-6xl xl:text-8xl font-serif text-white font-bold">
         Welcome to NewBlog
       </h1>
+      <div className="text-white lg:font-medium  items-center mb-40 mt-8 flex justify-center font-serif mr-10 ml-10 md:mr-15 md:ml-15 lg:mr-20 lg:ml-20  ">
+        <h3 className="text-lg md:text-2xl lg:text-3xl xl:text-4xl ">
+          The NewBlog covers topics at the cross section of &#160;
+          <strong>design</strong>,&#160;<strong>art</strong>&#160;and&#160;
+          <strong>technology</strong>.
+        </h3>
+      </div>
 
-      <h3 className="items-center mb-40 mt-8 font-medium flex justify-center text-4xl font-serif mr-20 ml-2 0">
-        The NewBlog covers topics at the cross section of &#160;
-        <strong>design</strong>,&#160;<strong>art</strong>&#160;and&#160;
-        <strong>technology</strong>.
-      </h3>
       {!posts.length ? (
         <div className="items-center flex justify-center mb-8" role="status">
           <svg
@@ -50,7 +50,7 @@ const HomeScreen = ({ user }) => {
         <div className=" grid grid-cols-1  m-auto ">
           {posts.map((post) => (
             <div
-              className=" md:w-72 lg:w-96 sm:w-48 w-48  m-auto mb-4  "
+              className=" md:w-72 lg:w-96 sm:w-64 w-64  m-auto   mb-4  "
               key={post._id}
             >
               <Cards user={user} post={post} />

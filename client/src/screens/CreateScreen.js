@@ -40,7 +40,7 @@ const CreateScreen = ({ user }) => {
         </div>
       ) : (
         <div className="mt-0">
-          <div className="text-5xl font-medium font-sans flex flex-col items-center justify-center mb-20 ">
+          <div className="text-5xl font-medium font-serif flex flex-col items-center justify-center mb-20 text-white">
             <h1>Comments</h1>
           </div>
           <div className=" grid grid-cols-2  m-auto ">

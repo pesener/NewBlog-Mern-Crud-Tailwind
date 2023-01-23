@@ -18,9 +18,9 @@ const Navbar = ({ user, setUser }) => {
   return (
     <div className="bg-black">
       <div className="container mx-auto h-20 flex items-center  justify-between ">
-        <div className="flex flex-col justify-center items-center text-center">
+        <div className="flex flex-col justify-center items-center text-center  ">
           <a
-            className="text-white font-serif text-5xl font-bold pl-10"
+            className="text-white font-serif text-5xl font-bold pl-10 "
             href="/"
           >
             NewBlog
@@ -39,7 +39,7 @@ const Navbar = ({ user, setUser }) => {
               Admin
             </a>
             <a
-              className="flex items-center gap-x-1 bg-red-800 hover:bg-red-900 cursor-pointer rounded-full px-4 py-1"
+              className="flex items-center gap-x-1  bg-red-800 hover:bg-red-900 cursor-pointer  px-4 py-1 rounded-full "
               onClick={(e) => {
                 localStorage.removeItem("user");
                 setUser(null);

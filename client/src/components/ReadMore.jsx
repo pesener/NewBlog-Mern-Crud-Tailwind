@@ -38,14 +38,26 @@ const ReadMore = ({ id }) => {
 
   return (
     <div>
-      <div className="p-5 grid-col-1 text-center" key={postData._id}>
-        <h1 className="font-serif text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-900 mb-20 mt-20">
+      <div className="p-5 grid-col-1 text-center " key={postData._id}>
+        <h1 className="font-serif text-5xl font-bold leading-relaxed  tracking-tight text-white dark:text-gray-200 mb-20 mt-20 mr-40 ml-40 ">
           {postData.title}
         </h1>
-        <p className="mb-3 indent-8  font-normal leading-relaxed font-serif text-3xl text-gray-400 dark:text-gray-900 mr-40 ml-40">
+        <div className="flex justify-center ">
+          {" "}
+          {postData && postData.image === "" ? (
+            <img className="  h-auto mb-auto " src={postData.image} alt="" />
+          ) : (
+            <img
+              className=" rounded-t-lg h-48 w-max mb-20 "
+              src={postData.image}
+              alt=""
+            />
+          )}
+        </div>
+        <p className="mb-3 indent-20 break-words  font-normal leading-relaxed font-serif text-2xl text-white dark:text-gray-200 mr-40 ml-40">
           {postData.content}
         </p>
-        <p className="mb-3 indent-8 break-keep font-normal leading-relaxed font-serif text-2xl text-gray-400 dark:text-gray-900 mr-40 ml-40 mt-20">
+        <p className="mb-3 indent-20 break-words font-normal leading-relaxed font-serif text-2xl text-white dark:text-gray-200 mr-40 ml-40 mt-20">
           {postData.content2}
         </p>
       </div>

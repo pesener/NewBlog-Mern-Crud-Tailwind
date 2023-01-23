@@ -5,8 +5,10 @@ module.exports = {
     extend: {
       backgroundColor: (theme) => ({
         "brand-color": " rgb(153, 93, 93)",
+        "readmore-color": "#983616",
+        "hov-readmore": "#A43A17",
       }),
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
