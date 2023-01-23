@@ -10,11 +10,11 @@ const CreateScreen = ({ user }) => {
   const [type, setType] = useState(false);
   const comments = useSelector((state) => state.comments);
 
+  const [reloadScreen, setReloadScreen] = useState(false);
+
   useEffect(() => {
-    if (!comments[0]) {
-      dispatch(getComments());
-    }
-  }, [dispatch]);
+    dispatch(getComments());
+  }, [dispatch, reloadScreen]);
 
   return (
     <div>
@@ -35,7 +35,7 @@ const CreateScreen = ({ user }) => {
       </div>
       {!type ? <SubmitPost /> : <SubmitPost2 />}
       {!comments.length ? (
-        <div className="text-2xl font-medium font-sans flex flex-col items-center justify-center mb-40">
+        <div className="text-2xl font-medium font-serif text-white flex flex-col items-center justify-center mb-40">
           <h1>No comments in DB</h1>
         </div>
       ) : (
@@ -49,7 +49,12 @@ const CreateScreen = ({ user }) => {
                 className=" md:w-72 lg:w-96 sm:w-48 w-48  m-auto mb-4  "
                 key={com._id}
               >
-                <CommentsAdmin user={user} com={com} />
+                <CommentsAdmin
+                  user={user}
+                  com={com}
+                  setReloadScreen={setReloadScreen}
+                  reloadScreen={reloadScreen}
+                />
               </div>
             ))}
           </div>
