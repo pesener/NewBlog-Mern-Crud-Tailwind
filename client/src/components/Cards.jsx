@@ -11,7 +11,7 @@ const Cards = ({ post, user }) => {
   return (
     <div
       key={post._id}
-      className="max-w-sm opacity-100 drop-shadow-2xl   mb-20 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-gray-500/40 hover:shadow-gray-500/50 dark:bg-gray-800 dark:border-gray-700  "
+      className="max-w-sm opacity-100 drop-shadow-2xl  mb-20 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-gray-500/40 hover:shadow-gray-500/50 dark:bg-gray-800 dark:border-gray-700  "
     >
       <div>
         <img
