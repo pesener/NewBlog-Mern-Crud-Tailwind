@@ -44,7 +44,6 @@ const HomeScreen = ({ user }) => {
               fill="currentFill"
             />
           </svg>
-          <span className="sr-only">Loading...</span>
         </div>
       ) : (
         <div className=" grid grid-cols-1  m-auto ">
@@ -53,10 +52,17 @@ const HomeScreen = ({ user }) => {
               className=" md:w-72 lg:w-96 sm:w-64 w-64  m-auto   mb-4  "
               key={post._id}
             >
-              <Cards user={user} post={post} />
+              <Cards user={user} post={post} key={post._id} />
             </div>
           ))}
         </div>
+      )}
+      {posts.length === 0 ? (
+        <h1 className="flex justify-center font-serif text-white text-4xl ml-5">
+          Loading....
+        </h1>
+      ) : (
+        ""
       )}
       <div></div>
     </div>

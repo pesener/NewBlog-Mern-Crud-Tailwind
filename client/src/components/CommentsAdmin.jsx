@@ -6,13 +6,14 @@ import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import { updatePub } from "../axios";
 
-const CommentsAdmin = ({ user, com }) => {
+const CommentsAdmin = ({ user, com, setReloadScreen, reloadScreen }) => {
   const dispatch = useDispatch();
 
   const fetchPublish = (publishedObj) => {
     updatePub(publishedObj)
       .then((res) => {
         toast.success(res.data.message);
+        setReloadScreen(!reloadScreen);
       })
       .catch((err) => {
         console.log(err);
@@ -23,6 +24,10 @@ const CommentsAdmin = ({ user, com }) => {
   return (
     <div className="max-w-md opacity-90 m-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
       <div className="p-5 ">
+        <p className="mb-3 font-normal text-gray-400 dark:text-gray-200 truncate ">
+          <strong> Post name:</strong> {com.postName}
+        </p>
+
         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
           {com.name}
         </h5>

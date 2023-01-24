@@ -21,6 +21,9 @@ const commentSchema = mongoose.Schema(
     lid: {
       type: String,
     },
+    postName: {
+      type: String,
+    },
   },
   {
     timestamps: true,

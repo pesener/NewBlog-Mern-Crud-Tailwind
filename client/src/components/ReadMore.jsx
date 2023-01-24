@@ -24,6 +24,7 @@ const ReadMore = ({ id }) => {
     _id: "",
     isPublish: false,
     lid: "",
+    postName: "",
   });
 
   useEffect(() => {
@@ -38,11 +39,11 @@ const ReadMore = ({ id }) => {
 
   return (
     <div>
-      <div className="p-5 grid-col-1 text-center " key={postData._id}>
+      <div className="p-5 grid-col-1 text-center  " key={postData._id}>
         <h1 className="font-serif text-5xl font-bold leading-relaxed  tracking-tight text-white dark:text-gray-200 mb-20 mt-20 mr-40 ml-40 ">
           {postData.title}
         </h1>
-        <div className="flex justify-center ">
+        <div className="flex justify-center">
           {" "}
           {postData && postData.image === "" ? (
             <img className="  h-auto mb-auto " src={postData.image} alt="" />
@@ -54,10 +55,10 @@ const ReadMore = ({ id }) => {
             />
           )}
         </div>
-        <p className="mb-3 indent-20 break-words  font-normal leading-relaxed font-serif text-2xl text-white dark:text-gray-200 mr-40 ml-40">
+        <p className="mb-3 indent-20 break-words flex justify-center font-normal leading-relaxed font-serif text-2xl text-white dark:text-gray-200 mr-40 ml-40">
           {postData.content}
         </p>
-        <p className="mb-3 indent-20 break-words font-normal leading-relaxed font-serif text-2xl text-white dark:text-gray-200 mr-40 ml-40 mt-20">
+        <p className="mb-3 indent-20 flex justify-center break-words font-normal leading-relaxed font-serif text-2xl text-white dark:text-gray-200 mr-40 ml-40 mt-20">
           {postData.content2}
         </p>
       </div>
@@ -106,6 +107,7 @@ const ReadMore = ({ id }) => {
                       ...commentData,
                       email: e.target.value,
                       lid: postData._id,
+                      postName: postData.title,
                     })
                   }
                 ></input>

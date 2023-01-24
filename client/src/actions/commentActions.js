@@ -35,9 +35,9 @@ export const deleteComments = (id) => async (dispatch) => {
     console.log(error);
   }
 };
-export const updateComments = (id, commentData) => async (dispatch) => {
+export const updatePub = (id, updatedComment) => async (dispatch) => {
   try {
-    const { data } = await api.updatePost(id, commentData);
+    const { data } = await api.updatePub(id, updatedComment);
 
     dispatch({ type: UPDATECO, payload: data });
   } catch (error) {
