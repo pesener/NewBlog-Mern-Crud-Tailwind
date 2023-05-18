@@ -1,3 +1,5 @@
 # NewBlog
 
-## Blog Website Challange
+NewBlog is a blog web application built using JavaScript, React, Redux, Tailwind, MongoDB, Node.js and Express.js.
+
+![](images/newblog.png)
