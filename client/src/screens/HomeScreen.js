@@ -15,10 +15,10 @@ const HomeScreen = ({ user }) => {
 
   return (
     <div className="min-h-screen  ">
-      <h1 className="items-center mr-40 ml-40  mb-20 mt-20 flex justify-center text-3xl md:text-5xl lg:text-6xl xl:text-8xl font-serif text-white font-bold">
+      <h1 className="items-center mr-40 ml-40  mb-20 mt-20 flex justify-center text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-serif text-black font-bold">
         Welcome to NewBlog
       </h1>
-      <div className="text-white lg:font-medium  items-center mb-40 mt-8 flex justify-center font-serif mr-10 ml-10 md:mr-15 md:ml-15 lg:mr-20 lg:ml-20  ">
+      <div className="text-black lg:font-medium  items-center mb-40 mt-8 flex justify-center font-serif mr-10 ml-10 md:mr-15 md:ml-15 lg:mr-20 lg:ml-20  ">
         <h3 className="text-lg md:text-2xl lg:text-3xl xl:text-4xl ">
           The NewBlog covers topics at the cross section of &#160;
           <strong>design</strong>,&#160;<strong>art</strong>&#160;and&#160;

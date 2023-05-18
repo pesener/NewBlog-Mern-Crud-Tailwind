@@ -30,26 +30,28 @@ const PublishedComments = ({ id }) => {
 
   return (
     <div>
-      <div className="text-5xl font-medium font-serif flex flex-col items-center justify-center mb-10 mt-10 text-white dark:text-gray-200 ">
+      <div className="text-5xl font-medium font-serif flex flex-col items-center justify-center mb-10 mt-10 text-black dark:text-black-200 ">
         <h1>Comments</h1>
       </div>
 
       {isPubComment.map((com) =>
         com.lid === id ? (
-          <div
-            className="mb-3 mt-4 border-seperate  border-spacing-2 border border-slate-300 box-border   "
-            key={com._id}
-          >
-            <div className="p-5 grid-col-1 text-center container">
-              <p className="mb-2 font-normal font-serif  text-xl text-white dark:text-gray-200 ">
-                {com.comment}
-              </p>
-              <p className=" mb-3 flex justify-center text-xl font-bold font-serif tracking-tight text-white dark:text-gray-200">
-                {com.name}
-              </p>
-              <p className="text-gray-400 dark:text-gray-200 font-normal mb-3">
-                {moment(com.createdAt).fromNow()}
-              </p>
+          <div className="flex justify-center items-center">
+            <div
+              className="mb-3 mt-4 border-seperate  border-spacing-2 border border-gray-500 box-border  w-[700px]  "
+              key={com._id}
+            >
+              <div className="p-5 grid-col-1 text-center container">
+                <p className="mb-2 font-normal font-serif  text-xl text-black dark:text-black-200 ">
+                  <div className="font-bold">Comment:</div> {com.comment}
+                </p>
+                <p className=" mb-3 flex justify-center text-xl font-bold font-serif tracking-tight text-black dark:text-black-200 ">
+                  User: {com.name}
+                </p>
+                <p className="text-black-400 dark:text-black-200 font-normal mb-3">
+                  {moment(com.createdAt).fromNow()}
+                </p>
+              </div>
             </div>
           </div>
         ) : (
