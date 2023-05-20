@@ -27,13 +27,16 @@ const CommentsAdmin = ({ user, com, setReloadScreen, reloadScreen }) => {
         <p className="mb-3 font-normal text-gray-400 dark:text-gray-200 truncate ">
           <strong> Post name:</strong> {com.postName}
         </p>
+        <p className="mb-3 font-normal flex text-gray-400 dark:text-gray-200 truncate ">
+          <div className="font-semibold mr-3">Email: </div> {com.email}
+        </p>
 
-        <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {com.name}
+        <h5 className="mb-2 text-md flex  tracking-tight text-gray-900 dark:text-white">
+          <div className="font-semibold mr-3">Name: </div> {com.name}
         </h5>
 
-        <p className="mb-3 font-normal text-gray-400 dark:text-gray-200 truncate ">
-          {com.comment}
+        <p className="mb-3 font-normal flex text-gray-400 dark:text-gray-200 truncate ">
+          <div className="font-semibold mr-3">Comment: </div> {com.comment}
         </p>
 
         <p className="text-gray-600 dark:text-gray-400 font-normal mb-3">

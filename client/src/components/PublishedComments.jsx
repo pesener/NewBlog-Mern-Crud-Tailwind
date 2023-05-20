@@ -46,7 +46,7 @@ const PublishedComments = ({ id }) => {
                   <div className="font-bold">Comment:</div> {com.comment}
                 </p>
                 <p className=" mb-3 flex justify-center text-xl font-bold font-serif tracking-tight text-black dark:text-black-200 ">
-                  User: {com.name}
+                  Name: {com.name}
                 </p>
                 <p className="text-black-400 dark:text-black-200 font-normal mb-3">
                   {moment(com.createdAt).fromNow()}
