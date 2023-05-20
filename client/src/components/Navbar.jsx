@@ -20,7 +20,7 @@ const Navbar = ({ user, setUser }) => {
       <div className="container mx-auto h-20 flex items-center  justify-between ">
         <div className="flex flex-col justify-center items-center text-center  ">
           <a
-            className="text-[#DEFFE8] font-serif text-5xl font-bold pl-10 "
+            className="text-[#EEEEDE] font-serif text-5xl font-bold pl-10 "
             href="/"
           >
             NewBlog

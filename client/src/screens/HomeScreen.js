@@ -46,15 +46,17 @@ const HomeScreen = ({ user }) => {
           </svg>
         </div>
       ) : (
-        <div className=" grid grid-cols-1  m-auto ">
-          {posts.map((post) => (
-            <div
-              className=" md:w-72 lg:w-96 sm:w-64 w-64  m-auto   mb-4  "
-              key={post._id}
-            >
-              <Cards user={user} post={post} key={post._id} />
-            </div>
-          ))}
+        <div className=" ">
+          <div className=" grid grid-cols-3 mx-[60px]     ">
+            {posts.map((post) => (
+              <div
+                className=" md:w-72 lg:w-[350px] sm:w-64 w-64  m-auto  md:h-72 lg:h-[350px] sm:h-64 h-64    mb-4  "
+                key={post._id}
+              >
+                <Cards user={user} post={post} key={post._id} />
+              </div>
+            ))}
+          </div>
         </div>
       )}
       {posts.length === 0 ? (
