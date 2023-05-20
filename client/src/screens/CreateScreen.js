@@ -18,7 +18,7 @@ const CreateScreen = ({ user }) => {
 
   return (
     <div>
-      <div className="mb-9  flex justify-center gap-x-2">
+      <div className="mb-12  flex justify-center gap-x-2">
         <button
           className=" bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-2 border border-gray-700 rounded "
           onClick={() => setType(false)}
@@ -40,7 +40,7 @@ const CreateScreen = ({ user }) => {
         </div>
       ) : (
         <div className="mt-0">
-          <div className="text-5xl font-medium font-serif flex flex-col items-center justify-center mb-20 text-white">
+          <div className="text-5xl font-medium font-serif flex flex-col items-center justify-center mb-20 text-black">
             <h1>Comments</h1>
           </div>
           <div className=" grid grid-cols-2  m-auto ">
