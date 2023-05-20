@@ -20,14 +20,18 @@ const CreateScreen = ({ user }) => {
     <div>
       <div className="mb-12  flex justify-center gap-x-2">
         <button
-          className=" bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-2 border border-gray-700 rounded "
+          className={`${
+            !type ? "bg-gray-500" : "bg-gray-700 hover:bg-gray-500"
+          }   text-white font-bold py-2 px-2 border border-gray-700 rounded `}
           onClick={() => setType(false)}
         >
           Type 1{" "}
         </button>
 
         <button
-          className=" bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-2 border border-gray-700 rounded "
+          className={` ${
+            type ? "bg-gray-500" : "bg-gray-700 hover:bg-gray-500"
+          }  text-white font-bold py-2 px-2 border border-gray-700 rounded `}
           onClick={() => setType(true)}
         >
           Type 2{" "}

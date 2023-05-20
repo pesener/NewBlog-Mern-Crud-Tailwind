@@ -30,13 +30,13 @@ const PublishedComments = ({ id }) => {
 
   return (
     <div>
-      <div className="text-5xl font-medium font-serif flex flex-col items-center justify-center mb-10 mt-10 text-black dark:text-black-200 ">
+      <div className="text-5xl   font-medium font-serif flex flex-col items-center justify-center mb-10 mt-2 text-black dark:text-black-200 ">
         <h1>Comments</h1>
       </div>
 
       {isPubComment.map((com) =>
         com.lid === id ? (
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center ">
             <div
               className="mb-3 mt-4 border-seperate  border-spacing-2 border border-gray-500 box-border  w-[700px]  "
               key={com._id}

@@ -40,7 +40,7 @@ const ReadMore = ({ id }) => {
   return (
     <div>
       <div className="p-5 grid-col-1 text-center  " key={postData._id}>
-        <h1 className="font-serif text-5xl font-bold leading-relaxed  tracking-tight text-black dark:text-black-200 mb-10 mt-20 mr-60 ml-60 ">
+        <h1 className="font-serif text-5xl border-t border-gray-400 font-bold leading-relaxed  tracking-tight text-black dark:text-black-200 mb-10 mt-8 mr-60 ml-60 ">
           {postData.title}
         </h1>
         <div className="flex justify-center">
@@ -56,15 +56,15 @@ const ReadMore = ({ id }) => {
           )}
         </div>
 
-        <p className="mb-9 indent-20 mx-40 break-normal flex text-start justify-center font-normal leading-relaxed font-serif text-2xl text-black dark:text-black-200">
+        <p className="mb-9 indent-20  mx-40 break-normal flex text-start justify-center font-normal leading-relaxed font-serif text-2xl text-black dark:text-black-200">
           {postData.content}
         </p>
 
-        <p className="mb-20 indent-20 mx-40 flex text-start justify-center break-words font-normal leading-relaxed font-serif text-2xl text-black dark:text-black-200">
+        <p className="mb-10 border-b border-gray-400 indent-20 mx-40 flex text-start justify-center break-words font-normal leading-relaxed font-serif text-2xl text-black dark:text-black-200">
           {postData.content2 ? postData.content2 : ""}
         </p>
       </div>
-      <div className="mb-4 ">
+      <div className="mb-2 ">
         <PublishedComments id={id} />
       </div>
       <div className="min-h-screen mt-20">
