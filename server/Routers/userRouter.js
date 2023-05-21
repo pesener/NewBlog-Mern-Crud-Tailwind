@@ -166,12 +166,14 @@ router.put("/update/:id", async (req, res) => {
 router.post("/comment", async (req, res) => {
   try {
     console.log(req.body);
-    const { name, comment, email, isPublish, lid, postName } = req.body;
+    const { name, lastName, comment, email, isPublish, lid, postName } =
+      req.body;
 
     const createdComment = await Comment.create({
       comment,
       email,
       name,
+      lastName,
       isPublish,
       lid,
       postName,

@@ -30,7 +30,7 @@ const PublishedComments = ({ id }) => {
 
   return (
     <div>
-      <div className="text-5xl   font-medium font-serif flex flex-col items-center justify-center mb-10 mt-2 text-black dark:text-black-200 ">
+      <div className="text-5xl   font-medium font-serif flex flex-col items-center justify-center mb-0 mt-0 text-black dark:text-black-200 ">
         <h1>Comments</h1>
       </div>
 

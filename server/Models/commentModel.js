@@ -5,6 +5,9 @@ const commentSchema = mongoose.Schema(
     name: {
       type: String,
     },
+    lastName: {
+      type: String,
+    },
     comment: {
       type: String,
     },
