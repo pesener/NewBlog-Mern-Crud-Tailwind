@@ -68,7 +68,7 @@ const ReadMore = ({ id }) => {
       <div className="mb-2 ">
         <PublishedComments id={id} />
       </div>
-      <div className="min-h-screen mt-0">
+      <div className="min-h-[600px] mt-12">
         <div className="flex justify-center ">
           <div className="w-7/12 bg-[#e2e0c1] border border-gray-200 rounded-lg shadow-md sm:p-9   md:p-5 dark:bg-[#e2e0c1] ">
             <form
