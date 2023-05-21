@@ -82,7 +82,7 @@ const SignIn = () => {
             <button
               disabled={formData.email === "" || formData.password === ""}
               type="submit"
-              className="disabled:opacity-60 disabled:cursor-not-allowed w-full text-white bg-gray-600 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-red-900"
+              className="disabled:opacity-60 disabled:cursor-not-allowed w-full text-white bg-gray-600 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-blue-800"
             >
               Sign in to your account
             </button>

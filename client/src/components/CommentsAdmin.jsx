@@ -32,7 +32,8 @@ const CommentsAdmin = ({ user, com, setReloadScreen, reloadScreen }) => {
         </p>
 
         <h5 className="mb-2 text-md flex  tracking-tight text-gray-900 dark:text-white">
-          <div className="font-semibold mr-3">Name: </div> {com.name}
+          <div className="font-semibold mr-3">Name: </div> {com.name}{" "}
+          <div className=" ml-2">{com.lastName} </div>
         </h5>
 
         <p className="mb-3 font-normal flex text-gray-400 dark:text-gray-200 truncate ">
