@@ -11,11 +11,11 @@ const Cards = ({ post, user }) => {
   return (
     <div
       key={post._id}
-      className="  drop-shadow-2xl  h-[330px]  mb-20 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-gray-500/40 hover:shadow-gray-500/50 dark:bg-gray-700 dark:border-gray-700  "
+      className=" transform transition-all hover:-translate-y-2 duration-300 h-[330px]  mb-20 bg-white border border-gray-200 rounded-lg shadow-xl shadow-gray-500/40 hover:shadow-gray-500 dark:bg-gray-700 dark:border-gray-700  "
     >
       <div>
         <img
-          className="  rounded-t-lg max-h-[220px] w-full "
+          className="  rounded-t-lg max-h-[220px] w-[340px] mx-auto p-1 "
           src={post.image}
           alt=""
         />
@@ -27,7 +27,7 @@ const Cards = ({ post, user }) => {
             {post.title}
           </h5>
         ) : (
-          <h5 className="mb-6 mt-4 text-2xl break-words line-clamp-1 font-bold font-serif tracking-tight text-[#EEEEDE]">
+          <h5 className="mb-6 mt-2 text-2xl break-words line-clamp-1 font-bold font-serif tracking-tight text-[#EEEEDE]">
             {post.title}
           </h5>
         )}
